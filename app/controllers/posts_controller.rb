@@ -8,16 +8,16 @@ class PostsController < ApplicationController
     redirect_to action: :index
   end
 
-  def cheackd
+  def checked
     post = Post.find(params[:id])
-    if post.cheackd
-      post.update(cheackd: false)
+    if post.checked
+      post.update(checked: false)
     else  
-      post.update(cheackd: true)
+      post.update(checked: true)
     end
 
     item = Post.find(params[:id])
-    render json: { post: item}
+    render json: { post: item }
   end
 
 end
